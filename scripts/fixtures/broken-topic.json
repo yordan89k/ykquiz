@@ -1,0 +1,17 @@
+{
+  "id": "space",
+  "name": "Space",
+  "questions": [
+    { "id": "rymden-001", "question": "Vilken planet är störst i vårt solsystem?", "correct": "Jupiter", "wrong": ["Saturnus", "Neptunus"] },
+    { "id": "rymden-001", "question": "Vilken planet ligger närmast solen?", "correct": "Merkurius", "wrong": ["Venus", "Mars"] },
+    { "id": "space-003", "question": "Vad heter Saturnus största måne?", "correct": "Titan", "wrong": ["Rhea", "Mimas"] },
+    { "id": "rymden-004", "question": "Vilken planet kallas den röda planeten?", "correct": "Mars", "wrongs": ["Venus", "Jupiter"] },
+    { "id": "rymden-005", "question": "Vilken är den största månen i solsystemet?", "correct": "Ganymedes", "wrong": ["Titan"] },
+    { "id": "rymden-006", "question": "", "correct": "Väte", "wrong": ["Helium", "Syre"] },
+    { "id": "rymden-007", "question": "Vad mäter enheten ljusår?", "correct": "Avstånd ", "wrong": ["Tid", "Ljusstyrka"] },
+    { "id": "rymden-008", "question": "Vilken planet har två månar, Phobos och Deimos?", "correct": "Mars", "wrong": ["mars", "Venus"] },
+    { "id": "rymden-009", "question": "Vilken är den hetaste planeten?", "correct": "Venus", "wrong": ["Merkurius", "Inget av ovanstående"] },
+    { "id": "rymden-010", "question": "vilken planet är STÖRST i vårt solsystem", "correct": "Jupiter", "wrong": ["Uranus", "Neptunus"] },
+    "rymden-011"
+  ]
+}

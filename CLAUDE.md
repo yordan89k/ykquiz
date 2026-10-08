@@ -29,6 +29,7 @@ Use current stable versions. Do not add dependencies without a clear reason; pre
 - `npm run build` — type-check and production build
 - `npm run test` — run unit tests
 - `npm run validate` — validate all question files
+- `npm run validate -- --skip-count` — same, but skip the 200–300 count check (while topics are still being filled)
 
 ## Project structure
 
