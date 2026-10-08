@@ -1,0 +1,31 @@
+{
+  "id": "rymden",
+  "name": "Rymden",
+  "questions": [
+    { "id": "rymden-001", "question": "Vilken planet är störst i vårt solsystem?", "correct": "Jupiter", "wrong": ["Saturnus", "Neptunus"] },
+    { "id": "rymden-002", "question": "Vilken planet ligger närmast solen?", "correct": "Merkurius", "wrong": ["Venus", "Mars"] },
+    { "id": "rymden-003", "question": "Vilken planet brukar kallas ”den röda planeten”?", "correct": "Mars", "wrong": ["Venus", "Merkurius"] },
+    { "id": "rymden-004", "question": "Vad heter planeten Mars två månar?", "correct": "Phobos och Deimos", "wrong": ["Io och Europa", "Titan och Rhea"] },
+    { "id": "rymden-005", "question": "Vilken är Saturnus största måne?", "correct": "Titan", "wrong": ["Enceladus", "Mimas"] },
+    { "id": "rymden-006", "question": "Vilken är den största månen i solsystemet?", "correct": "Ganymedes", "wrong": ["Titan", "Callisto"] },
+    { "id": "rymden-007", "question": "Vem var den första människan som gick på månen?", "correct": "Neil Armstrong", "wrong": ["Buzz Aldrin", "Michael Collins"] },
+    { "id": "rymden-008", "question": "Vilket år landade Apollo 11 på månen?", "correct": "1969", "wrong": ["1967", "1971"] },
+    { "id": "rymden-009", "question": "Vem var den första människan i rymden?", "correct": "Jurij Gagarin", "wrong": ["Alan Shepard", "John Glenn"] },
+    { "id": "rymden-010", "question": "Vad hette den första konstgjorda satelliten i omloppsbana runt jorden?", "correct": "Sputnik 1", "wrong": ["Vostok 1", "Explorer 1"] },
+    { "id": "rymden-011", "question": "Vilken planet har den hetaste ytan i solsystemet?", "correct": "Venus", "wrong": ["Merkurius", "Mars"] },
+    { "id": "rymden-012", "question": "Vilken galax ingår vårt solsystem i?", "correct": "Vintergatan", "wrong": ["Andromedagalaxen", "Triangelgalaxen"] },
+    { "id": "rymden-013", "question": "Ungefär hur lång tid tar det för solljuset att nå jorden?", "correct": "Cirka 8 minuter", "wrong": ["Cirka 8 sekunder", "Cirka 8 timmar"] },
+    { "id": "rymden-014", "question": "Vilken typ av stjärna är solen?", "correct": "Gul dvärg", "wrong": ["Röd jätte", "Vit dvärg"] },
+    { "id": "rymden-015", "question": "Vilken planet har en axellutning på nästan 98 grader och roterar så att säga liggande?", "correct": "Uranus", "wrong": ["Neptunus", "Saturnus"] },
+    { "id": "rymden-016", "question": "Vilket år omklassificerades Pluto till dvärgplanet?", "correct": "2006", "wrong": ["2001", "2011"] },
+    { "id": "rymden-017", "question": "Vem formulerade lagarna som beskriver planeternas elliptiska banor runt solen?", "correct": "Johannes Kepler", "wrong": ["Galileo Galilei", "Tycho Brahe"] },
+    { "id": "rymden-018", "question": "Vem upptäckte Jupiters fyra största månar år 1610?", "correct": "Galileo Galilei", "wrong": ["Johannes Kepler", "Christiaan Huygens"] },
+    { "id": "rymden-019", "question": "Vad kallas gränsen runt ett svart hål som inte ens ljus kan ta sig ut ifrån?", "correct": "Händelsehorisont", "wrong": ["Singularitet", "Ackretionsskiva"] },
+    { "id": "rymden-020", "question": "Vilket grundämne är det vanligaste i solen?", "correct": "Väte", "wrong": ["Helium", "Syre"] },
+    { "id": "rymden-021", "question": "Vad heter det stora stormsystemet på Jupiter?", "correct": "Stora röda fläcken", "wrong": ["Stora mörka fläcken", "Stora vita ovalen"] },
+    { "id": "rymden-022", "question": "Vad mäter enheten ljusår?", "correct": "Avstånd", "wrong": ["Tid", "Ljusstyrka"] },
+    { "id": "rymden-023", "question": "Vilken komet återkommer till det inre solsystemet ungefär vart 76:e år?", "correct": "Halleys komet", "wrong": ["Hale-Bopps komet", "Enckes komet"] },
+    { "id": "rymden-024", "question": "Vilken planet har den kortaste dagen, det vill säga roterar snabbast?", "correct": "Jupiter", "wrong": ["Saturnus", "Neptunus"] },
+    { "id": "rymden-025", "question": "Vilket rymdteleskop sköts upp med rymdfärjan Discovery år 1990?", "correct": "Hubbleteleskopet", "wrong": ["Keplerteleskopet", "Spitzerteleskopet"] }
+  ]
+}
