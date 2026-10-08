@@ -34,11 +34,11 @@ export function StartScreen({ error, onSelect }: Props) {
             <button
               type="button"
               onClick={() => onSelect(topic.id)}
-              className="group flex min-h-[5.5rem] w-full touch-manipulation select-none flex-col items-start justify-between gap-3 rounded-2xl border border-line bg-surface p-4 text-left transition-colors duration-150 hover:border-gold/50 hover:bg-surface-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold active:bg-surface-hover"
+              className="group flex min-h-[4.5rem] w-full touch-manipulation select-none items-center justify-center gap-3 rounded-2xl border border-line bg-surface px-3 py-4 transition-colors duration-150 hover:border-gold/50 hover:bg-surface-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold active:bg-surface-hover"
             >
               <TopicIcon
                 topic={topic.id}
-                className="size-6 text-muted transition-colors duration-150 group-hover:text-gold"
+                className="size-6 shrink-0 text-muted transition-colors duration-150 group-hover:text-gold"
               />
               <span className="text-lg font-semibold">{topic.name}</span>
             </button>
