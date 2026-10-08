@@ -68,7 +68,7 @@ When generating or editing questions:
 - Exactly one correct answer, exactly two plausible wrong answers of similar length and style.
 - No duplicates or near-duplicates within a topic.
 - No time-sensitive facts (current leaders, "latest" products, precise populations).
-- Medium difficulty for Geografi, Länder, Rymden, Sverige. Hard (professional level) for IT and AI.
+- Difficulty per topic (see C-2 in docs/requirements.md): medium for Länder and Sverige; Rymden medium with slightly harder astrophysics and space exploration; Geografi about half medium, half hard, fact-focused rather than explaining processes; hard (professional level) for IT and AI.
 - Correct, natural Swedish. Only state facts you are certain of; if unsure, leave the question out.
 - Always run `npm run validate` after changing question files.
 

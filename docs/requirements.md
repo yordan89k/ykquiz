@@ -101,7 +101,7 @@ One JSON file per topic in `src/data/`:
 | ID  | Requirement |
 |-----|-------------|
 | C-1 | 200–300 questions per topic (target: 250). |
-| C-2 | Difficulty: **medium** for Geografi, Länder, Rymden, Sverige. **Hard** for IT and AI — the level that people who studied and work as IT/AI specialists should know. |
+| C-2 | Difficulty: **medium** for Länder and Sverige. **Rymden**: medium, slightly harder for astrophysics and space exploration. **Geografi**: about half medium, half hard; questions focus on facts (where, which, what it is called), not on explaining processes. **Hard** for IT and AI — the level that people who studied and work as IT/AI specialists should know. |
 | C-3 | Exactly one correct answer and two **plausible** wrong answers of similar length, style and category, so the answer cannot be guessed from its form. No "Alla ovanstående" / "Inget av ovanstående". |
 | C-4 | No duplicate or near-duplicate questions within a topic. |
 | C-5 | No **time-sensitive facts** (current office holders, "latest" products or models, precise populations, records likely to change). Especially important for IT and AI. |
