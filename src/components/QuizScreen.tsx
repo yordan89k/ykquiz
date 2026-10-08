@@ -40,42 +40,55 @@ export function QuizScreen({ question, index, total, score, selected, onAnswer, 
 
   return (
     <section className="flex flex-col gap-6">
-      <header className="flex items-center justify-between text-sm text-neutral-400">
-        <span>
-          Fråga {index + 1} / {total}
-        </span>
-        <span>
-          Rätt: {score.correct} · Fel: {score.incorrect}
-        </span>
+      <header className="flex flex-col gap-3">
+        <div className="flex items-center justify-between text-sm">
+          <span className="font-medium tabular-nums">
+            Fråga {index + 1} / {total}
+          </span>
+          <button
+            type="button"
+            onClick={() => setConfirmingQuit(true)}
+            className="-my-3 -mr-3 min-h-12 touch-manipulation rounded-md px-3 text-muted underline-offset-4 hover:text-ink hover:underline focus-visible:outline-2 focus-visible:outline-gold"
+          >
+            Avsluta
+          </button>
+        </div>
+        <div className="h-1 overflow-hidden rounded-full bg-line" aria-hidden="true">
+          <div
+            className="h-full rounded-full bg-gold motion-safe:transition-[width] motion-safe:duration-300"
+            style={{ width: `${((index + (selected === null ? 0 : 1)) / total) * 100}%` }}
+          />
+        </div>
+        <p className="text-sm text-muted tabular-nums">
+          Rätt {score.correct} · Fel {score.incorrect}
+        </p>
       </header>
 
-      <h2 ref={headingRef} tabIndex={-1} className="text-xl font-semibold outline-none">
-        {question.question}
-      </h2>
+      <div key={question.id} className="flex flex-col gap-6 motion-safe:animate-enter">
+        <h2
+          ref={headingRef}
+          tabIndex={-1}
+          className="wrap-text text-2xl leading-snug font-semibold tracking-tight outline-none"
+        >
+          {question.question}
+        </h2>
 
-      <div className="flex flex-col gap-3">
-        {question.options.map((text, i) => (
-          <AnswerOption
-            key={i}
-            label={LABELS[i]!}
-            text={text}
-            state={optionState(question, selected, i)}
-            onSelect={() => onAnswer(i as OptionIndex)}
-          />
-        ))}
+        <div className="flex flex-col gap-3">
+          {question.options.map((text, i) => (
+            <AnswerOption
+              key={i}
+              label={LABELS[i]!}
+              text={text}
+              state={optionState(question, selected, i)}
+              onSelect={() => onAnswer(i as OptionIndex)}
+            />
+          ))}
+        </div>
       </div>
 
       <p aria-live="polite" className="sr-only">
         {announcement}
       </p>
-
-      <button
-        type="button"
-        onClick={() => setConfirmingQuit(true)}
-        className="self-center p-2 text-sm text-neutral-500 underline-offset-4 hover:underline"
-      >
-        Avsluta
-      </button>
 
       <QuitDialog
         open={confirmingQuit}

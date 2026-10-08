@@ -46,10 +46,12 @@ export default function App() {
   }, [answeredCorrectly, quizIndex])
 
   return (
-    <main className="mx-auto w-full max-w-xl px-4 pt-[max(2rem,env(safe-area-inset-top))] pb-[max(2rem,env(safe-area-inset-bottom))]">
+    <main className="mx-auto w-full max-w-xl pt-[max(1.5rem,env(safe-area-inset-top))] pr-[max(1rem,env(safe-area-inset-right))] pb-[max(2rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] sm:pt-12">
       {state.screen === 'start' && <StartScreen error={state.error} onSelect={selectTopic} />}
 
-      {state.screen === 'loading' && <p className="text-neutral-400">Laddar frågor…</p>}
+      {state.screen === 'loading' && (
+        <p className="pt-4 text-muted motion-safe:animate-enter">Laddar frågor…</p>
+      )}
 
       {state.screen === 'quiz' && (
         <QuizScreen
