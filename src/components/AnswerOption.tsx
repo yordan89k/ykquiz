@@ -31,10 +31,10 @@ export function AnswerOption({ label, text, state, onSelect }: Props) {
       type="button"
       onClick={onSelect}
       aria-disabled={answered}
-      className={`flex min-h-14 w-full touch-manipulation select-none items-center gap-4 rounded-2xl border px-4 py-3 text-left transition-[background-color,border-color,opacity] duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${buttonClasses[state]} ${answered ? 'cursor-default' : ''}`}
+      className={`flex min-h-[4.5rem] w-full touch-manipulation select-none items-center gap-4 rounded-2xl border px-4 py-4 text-left transition-[background-color,border-color,opacity] duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold ${buttonClasses[state]} ${answered ? 'cursor-default' : ''}`}
     >
       <span
-        className={`flex size-8 shrink-0 items-center justify-center rounded-full border text-sm font-semibold transition-colors duration-150 ${badgeClasses[state]}`}
+        className={`flex size-9 shrink-0 items-center justify-center rounded-full border text-base font-semibold transition-colors duration-150 ${badgeClasses[state]}`}
       >
         {state === 'correct' ? (
           <CheckIcon className="size-4" />
@@ -44,7 +44,7 @@ export function AnswerOption({ label, text, state, onSelect }: Props) {
           label
         )}
       </span>
-      <span className="wrap-text flex-1 text-base leading-snug">{text}</span>
+      <span className="wrap-text flex-1 text-lg leading-snug">{text}</span>
       {state === 'correct' && <span className="sr-only">(rätt)</span>}
       {state === 'incorrect' && <span className="sr-only">(fel)</span>}
     </button>

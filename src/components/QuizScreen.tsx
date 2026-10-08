@@ -73,7 +73,7 @@ export function QuizScreen({ question, index, total, score, selected, onAnswer, 
           {question.question}
         </h2>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           {question.options.map((text, i) => (
             <AnswerOption
               key={i}
