@@ -101,10 +101,11 @@ One JSON file per topic in `src/data/`:
 | ID  | Requirement |
 |-----|-------------|
 | C-1 | 200–300 questions per topic (target: 250). |
-| C-2 | Difficulty: **medium** for Länder and Sverige. **Rymden**: medium, slightly harder for astrophysics and space exploration. **Geografi**: about half medium, half hard; questions focus on facts (where, which, what it is called), not on explaining processes. **Hard** for IT and AI — the level that people who studied and work as IT/AI specialists should know. |
+| C-2 | Difficulty can be set per topic and, where useful, per subtopic. **Sverige**: medium. **Rymden**: medium, slightly harder for astrophysics and space exploration. **Geografi**: about half medium, half hard; questions focus on facts (where, which, what it is called), not on explaining processes. **Länder**: a mix of medium and hard; questions about Africa slightly easier, about Europe slightly harder. **Hard** for IT and AI — the level that people who studied and work as IT/AI specialists should know. |
+| C-2a | Mix plain fact questions ("Vilken är Schweiz huvudstad?") with questions built on interesting facts: what makes something unique, or events that happened there in a given year ("Vilken är den enda huvudstaden i världen som gränsar till två andra länder?"). |
 | C-3 | Exactly one correct answer and two **plausible** wrong answers of similar length, style and category, so the answer cannot be guessed from its form. No "Alla ovanstående" / "Inget av ovanstående". |
 | C-4 | No duplicate or near-duplicate questions within a topic. |
-| C-5 | No **time-sensitive facts** (current office holders, "latest" products or models, precise populations, records likely to change). Especially important for IT and AI. |
+| C-5 | No **time-sensitive facts** (current office holders, "latest" products or models, precise populations, records likely to change). Especially important for IT and AI. **Recent events are allowed** when the year or circumstances are stated so the answer stays true ("Vilket år införde Bulgarien euron?"). |
 | C-6 | Natural, grammatically correct Swedish. Established English technical terms may be used in IT and AI where that is how Swedish professionals actually say them. |
 
 ### Topic boundaries

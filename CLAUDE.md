@@ -67,8 +67,10 @@ Each topic file follows this shape:
 When generating or editing questions:
 - Exactly one correct answer, exactly two plausible wrong answers of similar length and style.
 - No duplicates or near-duplicates within a topic.
-- No time-sensitive facts (current leaders, "latest" products, precise populations).
-- Difficulty per topic (see C-2 in docs/requirements.md): medium for Länder and Sverige; Rymden medium with slightly harder astrophysics and space exploration; Geografi about half medium, half hard, fact-focused rather than explaining processes; hard (professional level) for IT and AI.
+- No time-sensitive facts (current leaders, "latest" products, precise populations). Recent events are fine when the year or circumstances are stated, so the answer stays true.
+- Difficulty per topic and, where useful, per subtopic (see C-2 in docs/requirements.md): Sverige medium; Rymden medium with slightly harder astrophysics and space exploration; Geografi about half medium, half hard, fact-focused rather than explaining processes; Länder a medium/hard mix, Africa slightly easier and Europe slightly harder; hard (professional level) for IT and AI.
+- Mix plain fact questions with questions built on interesting facts (what makes something unique, events in a given year), roughly half and half.
+- Before writing questions for a new topic, propose about six subtopics and let the user adjust them.
 - Correct, natural Swedish. Only state facts you are certain of; if unsure, leave the question out.
 - Always run `npm run validate` after changing question files.
 

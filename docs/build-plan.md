@@ -68,11 +68,19 @@ Iterate in a few rounds; screenshots from your phone are useful feedback.
 
 ## Step 7 — Question generation (one topic at a time)
 
-Repeat for each topic. Generate in batches by subtopic, roughly 40–50 questions per batch.
+Repeat for each topic. Start by asking Claude to **propose about six subtopics** and adjust them before any questions are written. Then generate in batches by subtopic, roughly 40–50 questions per batch.
 
-> Generate questions for the topic "Rymden" following CLAUDE.md and section 6 of docs/requirements.md. This batch: 45 questions about planets and moons, medium difficulty, in Swedish. Wrong answers must be plausible and of the same kind as the correct answer. Avoid time-sensitive facts and only include facts you are certain of. Append them to src/data/rymden.json with continuing IDs and run npm run validate.
+> Generate questions for the topic "Rymden" following CLAUDE.md and section 6 of docs/requirements.md. This batch: 45 questions about planets and moons, in Swedish, at the difficulty set for this topic and subtopic. Mix plain facts with questions built on interesting facts. Wrong answers must be plausible and of the same kind as the correct answer. Only include facts you are certain of. Append them to src/data/rymden.json with continuing IDs and run npm run validate.
 
-Then review the batch (see Step 8), give feedback, and continue with the next subtopic. For IT and AI, state explicitly: *"hard, professional level — questions an experienced IT/AI specialist should know."*
+Then review the batch (see Step 8), give feedback, and continue with the next subtopic.
+
+**Lessons learned while generating Rymden, Geografi and Länder:**
+
+- **Difficulty can vary within a topic.** Set it per topic, and where it helps per subtopic or batch: for example medium for planets but slightly harder for astrophysics, an even mix of medium and hard within one batch, or easier questions about Africa and harder ones about Europe. Record the agreed level in C-2 of `docs/requirements.md` so later sessions and reviews follow it. For IT and AI, state explicitly: *"hard, professional level — questions an experienced IT/AI specialist should know."*
+- **Mix plain facts with interesting facts.** Plain fact questions such as *"Vilken är Schweiz huvudstad?"* are fine, but a good share of each batch should be built on something notable, such as *"Vilken är den enda huvudstaden i världen som gränsar till två andra länder?"*, events that happened in a place in a given year, or what makes something unique. Roughly half and half works well.
+- **Recent events are welcome when they are dated.** Mention the year or circumstances so the answer stays true later: *"Vilket år införde Bulgarien euron?"* or *"Vad hette Kazakstans huvudstad mellan 2019 och 2022?"*. Avoid undated "current", "latest" or "so far" wording and records that are likely to be broken.
+- **Facts rather than explanations** where the topic is about places and things: ask where, which, when and what something is called, not why or how a process works.
+- **Avoid disputed answers** (for example the longest river), and check that no wrong answer could also be defended as correct.
 
 **Suggested order:** Rymden → Geografi → Länder → Sverige → IT → AI (start with an easy topic to calibrate quality and style).
 
@@ -81,7 +89,7 @@ Then review the batch (see Step 8), give feedback, and continue with the next su
 ## Step 8 — Content review
 
 For each topic:
-1. Ask Claude to **fact-check its own batch** in a fresh session: *"Review every question in src/data/rymden.json for factual accuracy, ambiguity (more than one defensible answer), time-sensitive content and Swedish language quality. List problems; do not edit yet."*
+1. Ask Claude to **fact-check its own batch** in a fresh session: *"Review every question in src/data/rymden.json for factual accuracy, ambiguity (more than one defensible answer, including wrong options that could also be correct), undated time-sensitive content and Swedish language quality. Follow the difficulty set for this topic in C-2 of docs/requirements.md and do not flag questions just for being hard. List problems with question IDs; do not edit yet."*
 2. Read through the questions yourself (or play several quizzes on your phone).
 3. Ask Claude to fix the listed problems.
 
