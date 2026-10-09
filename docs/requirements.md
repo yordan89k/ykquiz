@@ -101,7 +101,7 @@ One JSON file per topic in `src/data/`:
 | ID  | Requirement |
 |-----|-------------|
 | C-1 | 200–300 questions per topic (target: 250). |
-| C-2 | Difficulty can be set per topic and, where useful, per subtopic. **Sverige**: medium. **Rymden**: medium, slightly harder for astrophysics and space exploration. **Geografi**: about half medium, half hard; questions focus on facts (where, which, what it is called), not on explaining processes. **Länder**: a mix of medium and hard; questions about Africa slightly easier, about Europe slightly harder. **Hard** for IT and AI — the level that people who studied and work as IT/AI specialists should know. |
+| C-2 | Difficulty can be set per topic and, where useful, per subtopic. **Sverige**: harder, since players know Sweden well — each batch of 50 has 10 medium, 20 hard and 20 very hard questions; for year answers, keep a clear gap (roughly 10+ years) between the options. **Rymden**: medium, slightly harder for astrophysics and space exploration. **Geografi**: about half medium, half hard; questions focus on facts (where, which, what it is called), not on explaining processes. **Länder**: a mix of medium and hard; questions about Africa slightly easier, about Europe slightly harder. **Hard** for IT and AI — the level that people who studied and work as IT/AI specialists should know. |
 | C-2a | Mix plain fact questions ("Vilken är Schweiz huvudstad?") with questions built on interesting facts: what makes something unique, or events that happened there in a given year ("Vilken är den enda huvudstaden i världen som gränsar till två andra länder?"). |
 | C-3 | Exactly one correct answer and two **plausible** wrong answers of similar length, style and category, so the answer cannot be guessed from its form. No "Alla ovanstående" / "Inget av ovanstående". |
 | C-4 | No duplicate or near-duplicate questions within a topic. |
@@ -113,6 +113,6 @@ One JSON file per topic in `src/data/`:
 - **Geografi** — physical geography: mountains, rivers, lakes, oceans, deserts, islands, volcanoes, climate and climate zones, continents, natural phenomena, maps and coordinates.
 - **Länder** — countries: capitals, flags (described in words), official languages, currencies, borders and neighbours, famous landmarks, national symbols.
 - **Rymden** — planets, moons, the Sun and stars, galaxies, space exploration history, astronomers, basic astrophysics.
-- **Sverige** — Swedish history, geography, culture, traditions, inventions, well-known Swedes (historical), society and institutions.
+- **Sverige** — history and key events, culture and traditions, well-known Swedes (historical and living, dated achievements only; inventions belong here with their inventors), society and institutions, municipalities (places and landmarks, coats of arms and names, what they are known for, län and landskap).
 - **IT** — professional level: networking and protocols, operating systems, programming concepts, algorithms and data structures, databases, security and cryptography, cloud and infrastructure, software architecture, computing history.
 - **AI** — professional level: machine learning fundamentals, neural networks, transformers and attention, training and optimisation, evaluation metrics, NLP, computer vision, reinforcement learning, AI history, key safety and ethics concepts.
