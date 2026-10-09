@@ -5,6 +5,9 @@ import { QuitDialog } from './QuitDialog'
 
 const LABELS = ['A', 'B', 'C'] as const
 
+// Long questions get a slightly smaller font on narrow screens so all answers fit without scrolling.
+const LONG_QUESTION_CHARS = 90
+
 interface Props {
   question: QuizQuestion
   index: number
@@ -68,7 +71,7 @@ export function QuizScreen({ question, index, total, score, selected, onAnswer, 
         <h2
           ref={headingRef}
           tabIndex={-1}
-          className="wrap-text text-2xl leading-snug font-semibold tracking-tight outline-none"
+          className={`wrap-text leading-snug font-semibold tracking-tight outline-none ${question.question.length > LONG_QUESTION_CHARS ? 'text-xl sm:text-2xl' : 'text-2xl'}`}
         >
           {question.question}
         </h2>

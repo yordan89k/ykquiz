@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { TOPICS } from '../data/topics'
 import type { TopicId } from '../types'
 import { TopicIcon } from './icons'
@@ -8,10 +9,17 @@ interface Props {
 }
 
 export function StartScreen({ error, onSelect }: Props) {
+  const headingRef = useRef<HTMLHeadingElement>(null)
+
+  // Move focus to the heading when returning here, so focus is not lost on the page body.
+  useEffect(() => {
+    headingRef.current?.focus()
+  }, [])
+
   return (
     <section className="flex flex-col gap-8 motion-safe:animate-enter">
       <header className="flex flex-col gap-3 pt-4">
-        <h1 className="text-4xl font-bold tracking-tight">
+        <h1 ref={headingRef} tabIndex={-1} className="text-4xl font-bold tracking-tight outline-none">
           <span className="text-gold">YK</span> Quiz
         </h1>
         <p className="text-base leading-relaxed text-muted">

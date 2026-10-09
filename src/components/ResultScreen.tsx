@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import type { Score } from '../types'
 
 interface Props {
@@ -8,9 +9,16 @@ interface Props {
 }
 
 export function ResultScreen({ score, total, onRestart, onHome }: Props) {
+  const headingRef = useRef<HTMLHeadingElement>(null)
+
+  // Move focus to the score so screen readers announce the result.
+  useEffect(() => {
+    headingRef.current?.focus()
+  }, [])
+
   return (
     <section className="flex min-h-[70dvh] flex-col items-center justify-center gap-12 text-center motion-safe:animate-enter">
-      <h1 className="flex flex-col items-center gap-2">
+      <h1 ref={headingRef} tabIndex={-1} className="flex flex-col items-center gap-2 outline-none">
         <span className="text-8xl font-bold tracking-tight text-gold tabular-nums">
           {score.correct}
         </span>{' '}
