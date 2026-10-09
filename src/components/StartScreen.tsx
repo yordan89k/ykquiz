@@ -20,7 +20,10 @@ export function StartScreen({ error, onSelect }: Props) {
     <section className="flex flex-col gap-8 motion-safe:animate-enter">
       <header className="flex flex-col gap-3 pt-4">
         <h1 ref={headingRef} tabIndex={-1} className="text-4xl font-bold tracking-tight outline-none">
-          <span className="text-gold">YK</span> Quiz
+          <span className="bg-linear-to-br from-[#f4d47c] via-gold to-[#e8933f] bg-clip-text text-transparent">
+            YK
+          </span>{' '}
+          Quiz
         </h1>
         <p className="text-base leading-relaxed text-muted">
           Välj ett ämne och svara på 20 frågor. Du får veta direkt om du svarade rätt.
