@@ -251,6 +251,16 @@
     { "id": "sverige-247", "question": "Vilken figur finns i Lapplands landskapsvapen?", "correct": "En vildman", "wrong": ["En ren", "En björn"] },
     { "id": "sverige-248", "question": "Vilken stad vid Göta älv är känd för sina vattenfall och slussar?", "correct": "Trollhättan", "wrong": ["Lilla Edet", "Vänersborg"] },
     { "id": "sverige-249", "question": "Vilken svensk stad har vuxit ihop med finska Torneå?", "correct": "Haparanda", "wrong": ["Övertorneå", "Pajala"] },
-    { "id": "sverige-250", "question": "I vilken kommun ligger Tännforsen?", "correct": "Åre", "wrong": ["Krokom", "Berg"] }
+    { "id": "sverige-250", "question": "I vilken kommun ligger Tännforsen?", "correct": "Åre", "wrong": ["Krokom", "Berg"] },
+    { "id": "sverige-251", "question": "Ungefär hur lång är vandringsleden Kungsleden mellan Abisko i norr och Hemavan i söder?", "correct": "Cirka 440 km", "wrong": ["Cirka 330 km", "Cirka 390 km"] },
+    { "id": "sverige-252", "question": "I vilken by byggdes Icehotel, världens första hotell av is och snö?", "correct": "Jukkasjärvi", "wrong": ["Abisko", "Riksgränsen"] },
+    { "id": "sverige-253", "question": "Vilket svenskt kustområde blev världsarv år 2000 tack vare den kraftiga landhöjningen efter istiden?", "correct": "Höga kusten", "wrong": ["Bohuskusten", "Kalmarsund"] },
+    { "id": "sverige-254", "question": "Vilken nationalpark i Bohuslän blev år 2009 Sveriges första marina nationalpark?", "correct": "Kosterhavet", "wrong": ["Väderöarna", "Haparanda skärgård"] },
+    { "id": "sverige-255", "question": "Hur många slussar har Göta kanal?", "correct": "58", "wrong": ["19", "26"] },
+    { "id": "sverige-256", "question": "Vilken slusstrappa på Göta kanal har sju slussar i rad?", "correct": "Bergs slussar", "wrong": ["Borenshults slussar", "Sjötorps slussar"] },
+    { "id": "sverige-257", "question": "Vilket år öppnade Skansen i Stockholm, världens äldsta friluftsmuseum?", "correct": "1891", "wrong": ["1780", "1820"] },
+    { "id": "sverige-258", "question": "Vilken ort i Lappland har en Aurora Sky Station och räknas som en av världens bästa platser för att se norrsken?", "correct": "Abisko", "wrong": ["Riksgränsen", "Kvikkjokk"] },
+    { "id": "sverige-259", "question": "Vilket kungligt slott är både världsarv och kungafamiljens privata bostad?", "correct": "Drottningholms slott", "wrong": ["Stockholms slott", "Haga slott"] },
+    { "id": "sverige-260", "question": "Vad kallas de pelarlika kalkstensformationerna längs Gotlands och Fårös kuster?", "correct": "Raukar", "wrong": ["Klintar", "Kummel"] }
   ]
 }
