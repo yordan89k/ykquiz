@@ -66,6 +66,7 @@ Each topic file follows this shape:
 
 When generating or editing questions:
 - Exactly one correct answer, exactly two plausible wrong answers of similar length and style.
+- For numeric answers (years, amounts, counts, dates), vary whether the correct answer is the lowest, middle or highest value — roughly a third each. Do not place the wrong answers symmetrically around the correct one by habit; `npm run validate` warns if more than half are in the middle.
 - No duplicates or near-duplicates within a topic.
 - No time-sensitive facts (current leaders, "latest" products, precise populations). Recent events are fine when the year or circumstances are stated, so the answer stays true.
 - Difficulty per topic and, where useful, per subtopic (see C-2 in docs/requirements.md): Sverige harder — 10 medium, 20 hard and 20 very hard per batch of 50, with clear gaps between year options; Rymden medium with slightly harder astrophysics and space exploration; Geografi about half medium, half hard, fact-focused rather than explaining processes; Länder a medium/hard mix, Africa slightly easier and Europe slightly harder; hard (professional level) for IT and AI, with about 2:1 theory/facts versus interesting facts and no year answers; AI also includes plenty of dated questions about the developments of the last 2–3 years.
