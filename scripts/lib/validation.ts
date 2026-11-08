@@ -3,6 +3,10 @@ import type { Question, Topic } from '../../src/types'
 export const MIN_QUESTIONS = 200
 export const MAX_QUESTIONS = 300
 export const NEAR_DUPLICATE_THRESHOLD = 0.85
+/** Only check the middle-answer bias in topics with at least this many numeric questions. */
+export const MIDDLE_BIAS_MIN_QUESTIONS = 6
+/** Warn when more than this share of numeric questions has the correct answer in the middle. */
+export const MIDDLE_BIAS_MAX_SHARE = 0.5
 
 export interface Issue {
   level: 'error' | 'warning'
@@ -137,6 +141,69 @@ function checkDuplicates(questions: Question[], error: (msg: string) => void, wa
   }
 }
 
+const NUMBER_WORDS: Record<string, number> = {
+  en: 1, ett: 1, två: 2, tre: 3, fyra: 4, fem: 5, sex: 6, sju: 7, åtta: 8, nio: 9, tio: 10, elva: 11, tolv: 12,
+}
+const MONTHS = [
+  'januari', 'februari', 'mars', 'april', 'maj', 'juni',
+  'juli', 'augusti', 'september', 'oktober', 'november', 'december',
+]
+const MAGNITUDES: Record<string, number> = {
+  tusen: 1e3, miljon: 1e6, miljoner: 1e6, miljard: 1e9, miljarder: 1e9,
+}
+
+/**
+ * Reads the numeric value of an answer option, together with a "shape" that
+ * describes the text around the number. Returns null when the option has no number.
+ * Examples: "Cirka 1,5 miljarder km" -> { value: 1.5e9, shape: "# km" }, "6 juni" -> { value: 606, shape: "#" }.
+ */
+export function parseNumericAnswer(text: string): { value: number; shape: string } | null {
+  let t = text.toLowerCase().replace(/−/g, '-').replace(/\b(cirka|ungefär|över|under)\b/g, ' ').trim()
+  if (NUMBER_WORDS[t] != null) return { value: NUMBER_WORDS[t]!, shape: '#' }
+
+  const date = t.match(/^(\d{1,2}) (\p{L}+)$/u)
+  if (date && MONTHS.includes(date[2]!)) {
+    return { value: (MONTHS.indexOf(date[2]!) + 1) * 100 + Number(date[1]), shape: '#' }
+  }
+
+  t = t.replace(/(\d) (?=\d{3}\b)/g, '$1') // "85 000" -> "85000"
+  const match = t.match(/-?\d+(?:[.,]\d+)?/)
+  if (!match) return null
+
+  let value = Number(match[0].replace(',', '.'))
+  let rest = t.slice(0, match.index) + '#' + t.slice(match.index! + match[0].length)
+  for (const [word, factor] of Object.entries(MAGNITUDES)) {
+    if (new RegExp(`\\b${word}\\b`).test(rest)) {
+      value *= factor
+      rest = rest.replace(new RegExp(`\\b${word}\\b`), '')
+    }
+  }
+  return { value, shape: rest.replace(/\s+/g, ' ').trim() }
+}
+
+/** Where the correct answer sits among three numeric options, or null if the options are not comparable numbers. */
+export function correctPosition(q: Question): 'low' | 'middle' | 'high' | null {
+  const parsed = [q.correct, ...q.wrong].map(parseNumericAnswer)
+  if (parsed.some((p) => p === null)) return null
+  if (new Set(parsed.map((p) => p!.shape)).size !== 1) return null
+  const values = parsed.map((p) => p!.value)
+  if (new Set(values).size !== 3) return null
+  const rank = [...values].sort((a, b) => a - b).indexOf(values[0]!)
+  return (['low', 'middle', 'high'] as const)[rank]!
+}
+
+/** Warns when the correct answer is too often the middle value, which players can learn to exploit. */
+function checkMiddleAnswerBias(questions: Question[], warn: (msg: string) => void) {
+  const positions = questions.map(correctPosition).filter((p) => p !== null)
+  const middle = positions.filter((p) => p === 'middle').length
+  if (positions.length >= MIDDLE_BIAS_MIN_QUESTIONS && middle / positions.length > MIDDLE_BIAS_MAX_SHARE) {
+    warn(
+      `${middle} of ${positions.length} numeric questions have the correct answer as the middle value; ` +
+        'move some wrong answers so the correct one is also the lowest or highest',
+    )
+  }
+}
+
 /** Validates one parsed topic file against the expected topic from TOPICS. */
 export function validateTopic(data: unknown, expected: Topic, options: ValidateOptions = {}): TopicResult {
   const issues: Issue[] = []
@@ -172,6 +239,7 @@ export function validateTopic(data: unknown, expected: Topic, options: ValidateO
   })
 
   checkDuplicates(valid, error, warn)
+  checkMiddleAnswerBias(valid, warn)
 
   const count = data.questions.length
   if (!options.skipCount) {
